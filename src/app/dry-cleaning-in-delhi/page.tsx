@@ -21,6 +21,7 @@ import {
 } from 'phosphor-react';
 import { InfiniteSlider } from '@/components/motion-primitives/infinite-slider';
 import DownloadBtn from '@/components/DownloadBtn/downloadBtn';
+import { testimonialsRow2, TestimonialCard } from '@/components/landing/testimonials';
 
 // Data
 const servicesList = [
@@ -64,12 +65,7 @@ const stats = [
     { label: "Eco-Friendly Processes", icon: Leaf }
 ];
 
-const testimonialsList = Array(3).fill({
-    rating: "5.0",
-    text: "Meticulously handled my delicate garments and returned them in pristine condition. Highly recommended for anyone in Delhi seeking quality care.",
-    name: "Ahmed Al Mansoori",
-    role: "Business Owner"
-});
+
 
 const DryCleaningPage = () => {
     const heroTitleRef = useRef<HTMLHeadingElement>(null);
@@ -319,35 +315,9 @@ const DryCleaningPage = () => {
                     <div className="absolute left-0 top-0 bottom-0 w-20 2xl:w-40 bg-linear-to-r from-[#0A0A0A] to-transparent z-10 pointer-events-none"></div>
                     <div className="absolute right-0 top-0 bottom-0 w-20 2xl:w-40 bg-linear-to-l from-[#0A0A0A] to-transparent z-10 pointer-events-none"></div>
 
-                    <InfiniteSlider speed={40} gap={24}>
-                        {testimonialsList.map((t, i) => (
-                            <div key={i} className="w-[380px] 2xl:w-[450px] bg-[#141414]/80 border border-white/5 rounded-3xl p-10 flex flex-col gap-8 shrink-0">
-                                <div className="flex justify-between items-start">
-                                    <div className="flex flex-col gap-2">
-                                        <div className="flex gap-1 text-[#FACC15]">
-                                            <Star size={16} weight="fill" />
-                                            <Star size={16} weight="fill" />
-                                            <Star size={16} weight="fill" />
-                                            <Star size={16} weight="fill" />
-                                            <Star size={16} weight="fill" />
-                                        </div>
-                                        <span className="text-white/40 text-[12px] font-black uppercase tracking-widest">{t.rating} Rating</span>
-                                    </div>
-                                    <Quotes size={48} weight="fill" className="text-white/5 opacity-50" />
-                                </div>
-                                <p className="text-white/90 text-[16px] 2xl:text-[17px] leading-relaxed font-light italic">
-                                    "{t.text}"
-                                </p>
-                                <div className="flex items-center gap-4 mt-4">
-                                    <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/5">
-                                        <User size={24} className="text-white/40" />
-                                    </div>
-                                    <div>
-                                        <h4 className="text-white font-bold text-[15px]">{t.name}</h4>
-                                        <p className="text-gray-500 text-[13px]">{t.role}</p>
-                                    </div>
-                                </div>
-                            </div>
+                    <InfiniteSlider speed={50} gap={24}>
+                        {testimonialsRow2.map((testimonial) => (
+                            <TestimonialCard key={'row2-' + testimonial.id} data={testimonial} />
                         ))}
                     </InfiniteSlider>
                 </div>

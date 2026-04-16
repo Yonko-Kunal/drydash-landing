@@ -48,6 +48,7 @@ const Footer = () => {
                                 { name: 'Contact', href: '/contact' },
                                 { name: 'About Us', href: '/about-us' },
                                 { name: 'Privacy Policy', href: '/privacy-policy' },
+                                { name: 'Terms & Conditions', href: '/terms-and-conditions' },
                             ].map((link, idx) => (
                                 <li key={idx}>
                                     <Link href={link.href} className="text-[#8a928e] text-[13px] 2xl:text-[14px] hover:text-[#E2DEC6] transition-colors">{link.name}</Link>

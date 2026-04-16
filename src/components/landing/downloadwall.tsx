@@ -7,6 +7,7 @@ import WallMockup from '@/../public/Assests/SVG/wall_mockup.svg';
 import { CheckCircle, AppleLogo, GooglePlayLogo } from 'phosphor-react';
 import PlaystoreLogo from '@/../public/Assests/SVG/playstore.svg';
 import AppstoreLogo from '@/../public/Assests/SVG/app-store.svg';
+import { toast } from 'sonner';
 
 const Downloadwall = () => {
     return (
@@ -32,20 +33,22 @@ const Downloadwall = () => {
 
                 {/* App Buttons */}
                 <div className="flex flex-col gap-4 w-full items-center mb-8">
-                    <button className="bg-black text-white flex items-center justify-center gap-3 px-6 py-3.5 rounded-xl w-[200px]">
+                    <button onClick={() => toast.info('Coming soon for iOS')} className="bg-black text-white flex items-center justify-center gap-3 px-6 py-3.5 rounded-xl w-[200px]">
                         <Image src={AppstoreLogo} alt="App Store" className="w-[30px] h-auto" />
                         <div className="flex flex-col items-start gap-[2px]">
                             <span className="text-[9px] text-white/70 leading-none font-medium uppercase tracking-wider">Get it on</span>
                             <span className="text-[15px] font-bold leading-none tracking-tight">App Store</span>
                         </div>
                     </button>
-                    <button className="bg-black text-white flex items-center justify-center gap-3 px-6 py-3.5 rounded-xl w-[200px]">
-                        <Image src={PlaystoreLogo} alt="Play Store" className="w-[30px] h-auto" />
-                        <div className="flex flex-col items-start gap-[2px]">
-                            <span className="text-[9px] text-white/70 leading-none font-medium uppercase tracking-wider">Get it on</span>
-                            <span className="text-[15px] font-bold leading-none tracking-tight">Google play</span>
-                        </div>
-                    </button>
+                    <a target="_blank" href="https://play.google.com/store/apps/details?id=com.drydash.newCustomer&hl=en_IN">
+                        <button className="bg-black text-white flex items-center justify-center gap-3 px-6 py-3.5 rounded-xl w-[200px]">
+                            <Image src={PlaystoreLogo} alt="Play Store" className="w-[30px] h-auto" />
+                            <div className="flex flex-col items-start gap-[2px]">
+                                <span className="text-[9px] text-white/70 leading-none font-medium uppercase tracking-wider">Get it on</span>
+                                <span className="text-[15px] font-bold leading-none tracking-tight">Google play</span>
+                            </div>
+                        </button>
+                    </a>
                 </div>
 
                 {/* Peep Illustration - bottom aligned */}
@@ -84,16 +87,16 @@ const Downloadwall = () => {
 
                     {/* App Store and playstore Buttons */}
                     <div className="flex flex-col sm:flex-row gap-4">
-                        <button className="bg-black text-white flex items-center justify-center gap-3 px-6 py-3 rounded-xl hover:bg-black transition-colors w-[200px] cursor-pointer">
-                            <Image src={AppstoreLogo} alt="Play Store" className="w-10 h-auto" />
+                        <button onClick={() => toast.info('Coming soon for iOS')} className="bg-black text-white flex items-center justify-center gap-3 px-4 py-2 rounded-xl hover:bg-black transition-colors w-[180px] cursor-pointer">
+                            <Image src={AppstoreLogo} alt="Play Store" className="w-6 h-auto" />
                             <div className="flex flex-col items-start gap-[2px]">
                                 <span className="text-[10px] text-white/70 leading-none font-medium uppercase tracking-wide">Get it on</span>
                                 <span className="text-[17px] font-bold leading-none tracking-tight">App Store</span>
                             </div>
                         </button>
                         <a target="_blank" href="https://play.google.com/store/apps/details?id=com.drydash.newCustomer&hl=en_IN">
-                            <button className="bg-black text-white flex items-center justify-center gap-3 px-6 py-3 rounded-xl hover:bg-black transition-colors w-[200px] cursor-pointer">
-                                <Image src={PlaystoreLogo} alt="Play Store" className="w-10 h-auto" />
+                            <button className="bg-black text-white flex items-center justify-center gap-3 px-6 py-3 rounded-xl hover:bg-black transition-colors w-[180px] cursor-pointer">
+                                <Image src={PlaystoreLogo} alt="Play Store" className="w-6 h-auto" />
                                 <div className="flex flex-col items-start gap-[2px]">
                                     <span className="text-[10px] text-white/70 leading-none font-medium uppercase tracking-wide">Get it on</span>
                                     <span className="2xl:text-[16px] text-[15px] font-bold leading-none tracking-tight">Google play</span>

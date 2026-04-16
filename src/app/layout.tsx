@@ -7,6 +7,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import BottomBlur from "@/components/common/bottomBlur";
 import { ReactLenis } from "@/lib/lenis"
+import { Toaster } from 'sonner';
 
 const helvetica = localFont({
   src: "../../public/Assests/Fonts/Helovatica.woff2",
@@ -45,6 +46,7 @@ export default function RootLayout({
           {children}
           <BottomBlur />
           <Footer />
+          <Toaster />
         </body>
       </ReactLenis>
     </html>
